@@ -1,18 +1,18 @@
-import { Input, Button } from './styles';
+import { InputTask, AddTask } from './styles';
 
-const TaskForm = ({ children: { handle, task, placeholder } }) => {
+const TaskForm = ({ config: { handle, task, placeholder } }) => {
 
   const prevent = e => e.preventDefault()
 
   return (
     <form onSubmit={prevent}>
-      <Input
+      <InputTask
         onChange={handle.change}
         value={task}
         placeholder={placeholder}
       />
 
-      <Button onClick={handle.click}>Add</Button>
+      <AddTask onClick={handle.click}>Add</AddTask>
     </form>
   )
 }

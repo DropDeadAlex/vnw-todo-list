@@ -1,13 +1,12 @@
 import styled, { css } from 'styled-components';
 
-const Input = styled.input`
-
+const InputTask = styled.input`
 `
 
-const Button = styled.button(
+const AddTask = styled.button(
   ({ bgColor }) => css`
   `
 )
 
 
-export { Input, Button }
+export { InputTask, AddTask }

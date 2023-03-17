@@ -1,9 +1,9 @@
 import { List, Task } from './styles';
 
-const TaskList = ({ children: taskList }) => {
+const TaskList = ({ tasks }) => {
   return (
     <List>
-      {taskList.map((task, index) =>
+      {tasks.map((task, index) =>
         <Task key={index}>{task}</Task>
       )}
     </List>
