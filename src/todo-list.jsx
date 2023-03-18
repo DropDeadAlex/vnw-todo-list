@@ -5,11 +5,6 @@ class ToDoList extends Component {
   state = {
     taskList: [],
     inputTask: "",
-    // task: {
-    //   name: "",
-    //   id: 0,
-    //   delete: () => { },
-    // },
     placeholder: "Insira um tarefa..."
   };
 
@@ -20,16 +15,14 @@ class ToDoList extends Component {
   }
 
   addTask = () => {
-    const { taskList, inputTask: name } = this.state
-    
-    const task = {
-      name,
-      id: Math.floor(Math.random() * 10000000),
-      delete: () => this.deleteTask(task)
-    }
+    const { taskList, inputTask } = this.state
 
-    if (task.name != "")
+    if (inputTask != "") {
+      const taskId = Math.floor(Math.random() * 10000000)
+      const task = this.newTask(inputTask, taskId)
+
       this.setState({ taskList: [...taskList, task], inputTask: "" })
+    }
   }
 
   deleteTask = ({ id }) => {
@@ -40,9 +33,12 @@ class ToDoList extends Component {
     })
   }
 
-  newTask = () => this.setState({ 
-    task: { name: "", id: 0, delete: () => { } } 
+  newTask = (name, id) => ({
+    name,
+    id,
+    delete: () => this.deleteTask({ id })
   })
+
 
   render() {
     const { state: { taskList, inputTask, placeholder }, bindState, addTask } = this
