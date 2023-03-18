@@ -17,12 +17,11 @@ class ToDoList extends Component {
   addTask = () => {
     const { taskList, inputTask } = this.state
 
-    if (inputTask != "") {
-      const taskId = Math.floor(Math.random() * 10000000)
-      const task = this.newTask(inputTask, taskId)
-
-      this.setState({ taskList: [...taskList, task], inputTask: "" })
-    }
+    if (inputTask != "")
+      this.setState({
+        taskList: [...taskList, this.newTask()],
+        inputTask: ""
+      })
   }
 
   deleteTask = ({ id }) => {
@@ -33,11 +32,13 @@ class ToDoList extends Component {
     })
   }
 
-  newTask = (name, id) => ({
+  newTask = (name = this.state.inputTask, id = this.genId()) => ({
     name,
     id,
     delete: () => this.deleteTask({ id })
   })
+
+  genId = () => Math.floor(Math.random() * 10000000)
 
 
   render() {
