@@ -1,6 +1,6 @@
 import { InputTask, AddTask } from './styles';
 
-const TaskForm = ({ config: { inputTask, bindState, addTask, placeholder } }) => {
+const TaskForm = ({ config: { inputTask, placeholder, bindState, addTask } }) => {
 
   const prevent = e => e.preventDefault()
 

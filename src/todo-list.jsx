@@ -12,17 +12,17 @@ class ToDoList extends Component {
     const inputedTask = e.target.value
 
     this.setState({ inputTask: inputedTask })
-  }
+  };
 
   addTask = () => {
-    const { taskList, inputTask } = this.state
+    const { inputTask, taskList } = this.state
 
     if (inputTask != "")
       this.setState({
         taskList: [...taskList, this.newTask()],
         inputTask: ""
       })
-  }
+  };
 
   deleteTask = ({ id }) => {
     const { taskList } = this.state
@@ -30,20 +30,20 @@ class ToDoList extends Component {
     this.setState({
       taskList: taskList.filter(task => task.id != id)
     })
-  }
+  };
 
   newTask = (name = this.state.inputTask, id = this.genId()) => ({
     name,
     id,
     delete: () => this.deleteTask({ id })
-  })
+  });
 
-  genId = () => Math.floor(Math.random() * 10000000)
+  genId = () => Math.floor(Math.random() * 10000000);
 
 
   render() {
     const { state: { taskList, inputTask, placeholder }, bindState, addTask } = this
-    const taskFormConfig = { bindState, addTask, inputTask, placeholder }
+    const taskFormConfig = { inputTask, placeholder, bindState, addTask }
 
     return (
       <>
@@ -53,7 +53,7 @@ class ToDoList extends Component {
         <TaskList tasks={taskList} />
       </>
     )
-  }
+  };
 }
 
 export { ToDoList }
