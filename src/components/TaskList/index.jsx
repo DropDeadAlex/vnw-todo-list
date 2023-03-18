@@ -3,8 +3,11 @@ import { List, Task } from './styles';
 const TaskList = ({ tasks }) => {
   return (
     <List>
-      {tasks.map((task, index) =>
-        <Task key={index}>{task}</Task>
+      {tasks.map(task =>
+        <Task key={task.id}>
+          {task.name}
+          <button onClick={task.delete}>x</button>
+        </Task>
       )}
     </List>
   )

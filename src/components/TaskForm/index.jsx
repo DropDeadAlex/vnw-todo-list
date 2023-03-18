@@ -1,18 +1,18 @@
 import { InputTask, AddTask } from './styles';
 
-const TaskForm = ({ config: { handle, task, placeholder } }) => {
+const TaskForm = ({ config: { inputTask, bindState, addTask, placeholder } }) => {
 
   const prevent = e => e.preventDefault()
 
   return (
     <form onSubmit={prevent}>
       <InputTask
-        onChange={handle.change}
-        value={task}
+        onChange={bindState}
+        value={inputTask}
         placeholder={placeholder}
       />
 
-      <AddTask onClick={handle.click}>Add</AddTask>
+      <AddTask onClick={addTask}>Add</AddTask>
     </form>
   )
 }

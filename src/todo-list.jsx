@@ -4,28 +4,49 @@ import { Header, TaskForm, TaskList } from './components'
 class ToDoList extends Component {
   state = {
     taskList: [],
-    task: "",
-    placeholder: "coloque sua tarefa..."
+    inputTask: "",
+    // task: {
+    //   name: "",
+    //   id: 0,
+    //   delete: () => { },
+    // },
+    placeholder: "Insira um tarefa..."
   };
 
-  handle = {
-    change: e => {
-      const { value: inputedTask } = e.target
+  bindState = e => {
+    const inputedTask = e.target.value
 
-      this.setState({ task: inputedTask })
-    },
-
-    click: () => {
-      const { taskList, task } = this.state
-
-      if (task != "")
-        this.setState({ taskList: [...taskList, task], task: "" })
-    }
+    this.setState({ inputTask: inputedTask })
   }
 
+  addTask = () => {
+    const { taskList, inputTask: name } = this.state
+    
+    const task = {
+      name,
+      id: Math.floor(Math.random() * 10000000),
+      delete: () => this.deleteTask(task)
+    }
+
+    if (task.name != "")
+      this.setState({ taskList: [...taskList, task], inputTask: "" })
+  }
+
+  deleteTask = ({ id }) => {
+    const { taskList } = this.state
+
+    this.setState({
+      taskList: taskList.filter(task => task.id != id)
+    })
+  }
+
+  newTask = () => this.setState({ 
+    task: { name: "", id: 0, delete: () => { } } 
+  })
+
   render() {
-    const { handle, state: { taskList, task, placeholder } } = this
-    const taskFormConfig = { handle, task, placeholder }
+    const { state: { taskList, inputTask, placeholder }, bindState, addTask } = this
+    const taskFormConfig = { bindState, addTask, inputTask, placeholder }
 
     return (
       <>
