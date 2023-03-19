@@ -7,9 +7,9 @@ const TaskForm = ({ config: { inputTask, placeholder, bindState, addTask } }) =>
   return (
     <form onSubmit={prevent}>
       <InputTask
-        onChange={bindState}
         value={inputTask}
         placeholder={placeholder}
+        onChange={bindState}
       />
 
       <AddTask onClick={addTask}>Add</AddTask>

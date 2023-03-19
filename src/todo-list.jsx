@@ -9,9 +9,9 @@ class ToDoList extends Component {
   };
 
   bindState = e => {
-    const inputedTask = e.target.value
+    const $inputedTask = e.target.value
 
-    this.setState({ inputTask: inputedTask })
+    this.setState({ inputTask: $inputedTask })
   };
 
   addTask = () => {
@@ -32,16 +32,16 @@ class ToDoList extends Component {
     })
   };
 
-  newTask = (name = this.state.inputTask, id = this.genId()) => ({
-    name,
+  newTask = (id = this.genId(), name = this.state.inputTask) => ({
     id,
+    name,
     delete: () => this.deleteTask({ id })
   });
 
-  genId = () => Math.floor(Math.random() * 10000000);
+  genId = () => Math.floor(10000000 * Math.random());
 
 
-  render() {
+  render = () => {
     const { state: { taskList, inputTask, placeholder }, bindState, addTask } = this
     const taskFormConfig = { inputTask, placeholder, bindState, addTask }
 
