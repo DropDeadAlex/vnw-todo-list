@@ -1,11 +1,11 @@
-import { InputTask, AddTask } from './styles';
+import { InputTask, AddTask, TaskForm_ } from './styles';
 
 const TaskForm = ({ config: { inputTask, placeholder, bindState, addTask } }) => {
 
   const prevent = e => e.preventDefault()
 
   return (
-    <form onSubmit={prevent}>
+    <TaskForm_ onSubmit={prevent}>
       <InputTask
         value={inputTask}
         placeholder={placeholder}
@@ -13,7 +13,7 @@ const TaskForm = ({ config: { inputTask, placeholder, bindState, addTask } }) =>
       />
 
       <AddTask onClick={addTask}>Add</AddTask>
-    </form>
+    </TaskForm_>
   )
 }
 

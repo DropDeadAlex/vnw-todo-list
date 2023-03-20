@@ -1,4 +1,4 @@
-import { List, Task, DeleteBtn } from './styles';
+import { List, Task, ContainerBtn, DeleteBtn } from './styles';
 
 const TaskList = ({ tasks }) => {
   return (
@@ -6,7 +6,9 @@ const TaskList = ({ tasks }) => {
       {tasks.map(task =>
         <Task key={task.id}>
           {task.name}
-          <DeleteBtn onClick={task.delete}>x</DeleteBtn>
+          <ContainerBtn>
+            <DeleteBtn onClick={task.delete}>x</DeleteBtn>
+          </ContainerBtn>
         </Task>
       )}
     </List>

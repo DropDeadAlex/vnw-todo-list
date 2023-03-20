@@ -49,8 +49,10 @@ class ToDoList extends Component {
       <>
         <Header></Header>
 
-        <TaskForm config={taskFormConfig} />
-        <TaskList tasks={taskList} />
+        <main>
+          <TaskForm config={taskFormConfig} />
+          <TaskList tasks={taskList} />
+        </main>
       </>
     )
   };
