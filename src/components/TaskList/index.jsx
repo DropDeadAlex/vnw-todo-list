@@ -7,7 +7,7 @@ const TaskList = ({ tasks }) => {
         <Task key={task.id}>
           {task.name}
           <ContainerBtn>
-            <DeleteBtn onClick={task.delete}>x</DeleteBtn>
+            <DeleteBtn onClick={task.delete}>close</DeleteBtn>
           </ContainerBtn>
         </Task>
       )}
