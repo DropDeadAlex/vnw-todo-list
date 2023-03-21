@@ -1,13 +1,20 @@
-import { List, Task, ContainerBtn, DeleteBtn } from './styles';
+import { List, Task, ContainerBtn, ContainnerTask, DeleteBtn } from './styles';
 
 const TaskList = ({ tasks }) => {
   return (
     <List>
       {tasks.map(task =>
         <Task key={task.id}>
-          {task.name}
+          <ContainnerTask>
+            {/* <input type="checkbox"></input> */}
+            <span 
+              onClick={task.toggleDone}   
+              className={task.done ? "task-checked" : ""}
+            ></span>
+            <span>{task.name}</span>
+          </ContainnerTask>
           <ContainerBtn>
-            <DeleteBtn onClick={task.delete}>close</DeleteBtn>
+            <DeleteBtn onClick={task.delete}>delete</DeleteBtn>
           </ContainerBtn>
         </Task>
       )}

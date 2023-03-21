@@ -32,10 +32,22 @@ class ToDoList extends Component {
     })
   };
 
+  toggleTaskDone = ({ id }) => {
+    const { taskList } = this.state
+
+    const updatedTaskList = taskList.map(task =>
+      task.id === id ? { ...task, done: !task.done } : task
+    )
+
+    this.setState({ taskList: updatedTaskList})
+  }
+
   newTask = (id = this.genId(), name = this.state.inputTask) => ({
     id,
     name,
-    delete: () => this.deleteTask({ id })
+    done: false,
+    delete: () => this.deleteTask({ id }),
+    toggleDone: () => this.toggleTaskDone({ id })
   });
 
   genId = () => Math.floor(10000000 * Math.random());

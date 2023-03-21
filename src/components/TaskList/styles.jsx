@@ -19,6 +19,84 @@ const Task = styled.li`
   border-radius: 8px;
   padding: 10px 15px 10px 10px;
   background-color: rgb(37, 39, 60);
+
+  `
+
+const ContainnerTask = styled.div`
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 10px;
+
+  /* task checkbox */
+  span:nth-child(1) {    
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    transform-origin: center center;
+    border: 2px solid rgb(127, 90, 240);
+    border-radius: 50%;
+    transition: background-color 150ms ease 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89) 0s;
+    cursor: pointer;
+    
+    :before {
+      content: "";
+      width: 0px;
+      height: 2px;
+      border-radius: 2px;
+      background: rgb(127, 90, 240);
+      position: absolute;
+      transform: rotate(45deg);
+      top: 11px;
+      left: 7px;
+      transition: width 50ms ease 50ms;
+      transform-origin: 0% 0%;
+    }
+
+    :after {
+      content: "";
+      width: 0px;
+      height: 2px;
+      border-radius: 2px;
+      background: rgb(127, 90, 240);
+      position: absolute;
+      transform: rotate(305deg);
+      top: 15px;
+      left: 8px;
+      transition: width 50ms ease 0s;
+      transform-origin: 0% 0%;
+    }
+  }
+  
+  /* task checkbox="checked" */
+  span.task-checked {
+    background-color: rgb(127, 90, 240);
+    transform: scale(1.1);
+
+    :before {
+      width: 5px;
+      background: rgb(255, 255, 255);
+      transition: width 150ms ease 100ms;
+    }
+
+    :after {
+      width: 10px;
+      background: rgb(255, 255, 255);
+      transition: width 150ms ease 100ms;
+    }
+  }
+  
+  /* task name   */
+  span:nth-child(2) {
+    position: relative;
+    max-width: 415px;
+    text-align: start;
+    overflow: hidden;
+    cursor: default;
+    transition: all 0.3s ease 0s;
+  }
 `
 
 const ContainerBtn = styled.div`
@@ -76,4 +154,4 @@ const DeleteBtn = styled.span`
   }
 `
 
-export { List, Task, ContainerBtn, DeleteBtn }
+export { List, Task, ContainerBtn, ContainnerTask, DeleteBtn }

@@ -3,7 +3,7 @@ import { Header_, Title } from './styles';
 const Header = () => {
   return (
     <Header_>
-      <Title>ToDo List</Title>
+      <Title>Lista de Tarefas</Title>
     </Header_>
   )
 }
