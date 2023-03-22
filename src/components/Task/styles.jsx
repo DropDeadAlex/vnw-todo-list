@@ -52,7 +52,7 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
     background-color: ${!checked ? "transparent" : "var(--color-accent)"};
     transition: 
       background-color 150ms ease 200ms, 
-      transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89) 0s;
+      transform 350ms cubic-bezier(0.78, -1.22, 0.25, 7.75) 0s;
     
       
     :checked { transform: scale(1.1) }
@@ -62,7 +62,7 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       width: ${!checked ? "0px" : "5px"};
       height: 2px;
       border-radius: 2px;
-      background: ${!checked ? "var(--color-accent)" : "#ffffff"};
+      background: ${!checked ? "var(--color-accent)" : "#fff"};
       position: absolute;
       transform: rotate(45deg);
       top: 11px;
@@ -78,7 +78,7 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       width: ${!checked ? "0px" : "10px"};
       height: 2px;
       border-radius: 2px;
-      background: ${!checked ? "var(--color-accent)" : "#ffffff"};
+      background: ${!checked ? "var(--color-accent)" : "#fff"};
       position: absolute;
       transform: rotate(305deg);
       top: 15px;
