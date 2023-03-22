@@ -1,9 +1,9 @@
-import { Header_, Title } from './styles';
+import { Header_ } from './styles';
 
 const Header = () => {
   return (
     <Header_>
-      <Title>Lista de Tarefas</Title>
+      <h1>Lista de Tarefas</h1>
     </Header_>
   )
 }
