@@ -55,23 +55,8 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89) 0s;
     
       
-    :checked { 
-      transform: scale(1.1);
-      background: var(--color-accent);
-
-      :before {
-        background: #fff;
-        width: 5px;
-        transition: width 150ms ease 100ms;
-      }
-
-      :after {
-        background: #fff;
-        width: 10px;
-        transition: width 150ms ease 100ms;
-      }
-    }
-
+    :checked { transform: scale(1.1) }
+    
     :before {
       content: "";
       width: ${!checked ? "0px" : "5px"};
