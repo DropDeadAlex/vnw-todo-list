@@ -2,28 +2,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: var(--color-white);
-
-  --color-accent: rgb(169 113 45);
-  --color-white: rgb(204, 204, 204);
-  --color-gray: rgb(80, 71, 58);
-
-  --color-bg-dark1: rgb(29, 27, 27);
-  --color-bg-dark2: rgb(38, 33, 33);
-  --color-bg-dark3: rgb(57 50 45);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  color: var(--color-white);
+  background-color: var(--color-bw-dark2);
+  
+  color-scheme: light dark;
+
+
+  /* ------ color schemes -------- */
+  --color-white: rgb(204 204 204);
+
+  --color-accent-pnk: rgb(196 59 93);
+  --color-accent-yllw: rgb(169 113 45);
+  
+  /* brown */
+  --color-bw-gray: hsl(35, 16%, 32%);
+
+  --color-bw-dark1: hsl(0, 4%, 11%);
+  --color-bw-dark2: hsl(6, 7%, 14%);
+  --color-bw-dark3: hsl(25, 12%, 20%);
+
+  /* teal */
+  --color-tl-gray: hsl(215deg 11% 31%);
+
+  --color-tl-dark1: hsl(235deg 17% 14%);
+  --color-tl-dark2: hsl(233deg 18% 19%);
+  --color-tl-dark3: hsl(228deg 14% 25%);
 }
 
 * {
@@ -32,8 +46,6 @@
   box-sizing: border-box;
   outline: none;
 }
-
-body { background-color: var(--color-bg-dark2) }
 
 main {
   display: flex;

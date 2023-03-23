@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 const InputTask = styled.input`
   width: 80%;
   height: 40px;
-  border: 2px solid var(--color-accent);
-  background-color: var(--color-bg-dark2);
+  border: 2px solid var(--color-accent-yllw);
+  background-color: var(--color-bw-dark2);
   font-size: 18px;
   border-radius: 8px 0px 0px 8px;
   padding: 10px;
@@ -22,8 +22,8 @@ const TaskForm_ = styled.form`
 const AddTask = styled.button(
   ({ bgColor }) => css`
     border-radius: 0px 8px 8px 0px;
-    border: 2px solid var(--color-accent);
-    background-color: var(--color-accent);
+    border: 2px solid var(--color-accent-yllw);
+    background-color: var(--color-accent-yllw);
     font-weight: bold;
     color: rgba(255, 255, 255, 0.8);
     width: 20%;
