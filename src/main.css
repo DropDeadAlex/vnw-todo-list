@@ -11,13 +11,13 @@
   color-scheme: light dark;
   color: var(--color-white);
 
-  --color-accent: rgb(196, 59, 93);
+  --color-accent: rgb(169 113 45);
   --color-white: rgb(204, 204, 204);
   --color-gray: rgb(80, 71, 58);
 
   --color-bg-dark1: rgb(29, 27, 27);
   --color-bg-dark2: rgb(38, 33, 33);
-  --color-bg-dark3: rgb(54 47 43);
+  --color-bg-dark3: rgb(57 50 45);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
