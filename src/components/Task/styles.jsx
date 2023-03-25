@@ -9,7 +9,7 @@ export const Task_ = styled.li`
   width: 100%;
   border-radius: 8px;
   padding: 10px 15px 10px 10px;
-  background-color: var(--color-bw-dark3);
+  background-color: var(--color-tl-dark3);
 
   .containner-task {
     display: flex;
@@ -47,9 +47,9 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
     width: 25px;
     height: 25px;
 
-    border: 2px solid var(--color-accent-yllw);
+    border: 2px solid var(--color-accent-pnk);
     border-radius: 50%;
-    background-color: ${!checked ? "transparent" : "var(--color-accent-yllw)"};
+    background-color: ${!checked ? "transparent" : "var(--color-accent-pnk)"};
     transition: 
       background-color 150ms ease 200ms, 
       transform 350ms cubic-bezier(0.78, -1.22, 0.25, 7.75) 0s;
@@ -62,7 +62,7 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       width: ${!checked ? "0px" : "5px"};
       height: 2px;
       border-radius: 2px;
-      background: ${!checked ? "var(--color-accent-yllw)" : "#fff"};
+      background: ${!checked ? "var(--color-accent-pnk)" : "#fff"};
       position: absolute;
       transform: rotate(45deg);
       top: 11px;
@@ -78,7 +78,7 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       width: ${!checked ? "0px" : "10px"};
       height: 2px;
       border-radius: 2px;
-      background: ${!checked ? "var(--color-accent-yllw)" : "#fff"};
+      background: ${!checked ? "var(--color-accent-pnk)" : "#fff"};
       position: absolute;
       transform: rotate(305deg);
       top: 15px;
@@ -113,7 +113,7 @@ export const TaskName = styled.span`
 
 export const DeleteBtn = styled.span`
   cursor: pointer;
-  color: var(--color-bw-gray);
+  color: var(--color-tl-gray);
   transition: all 0.3s ease 0s;
 
   font-family: "Material Symbols Rounded";

@@ -10,7 +10,7 @@ const Header = styled.header(
     width: 100%;
     height: 200px;
     padding-bottom: 20px;
-    background-color: var(--color-bw-dark1);
+    background-color: var(--color-tl-dark1);
   `
 )
 
