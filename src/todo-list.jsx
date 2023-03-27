@@ -32,6 +32,20 @@ class ToDoList extends Component {
     })
   };
 
+  editTask = ({ id, name }) => {
+    const { taskList } = this.state
+
+    if (name != ""){
+      const updatedTaskList = taskList.map(task => 
+        task.id === id 
+          ? { ...task, name: name }
+          : task
+      )
+        
+      this.setState({ taskList: updatedTaskList })
+    }
+  };
+
   toggleTaskDone = ({ id }) => {
     const { taskList } = this.state
 
@@ -47,6 +61,7 @@ class ToDoList extends Component {
     name,
     done: false,
     delete: () => this.deleteTask({ id }),
+    edit: () => this.deleteTask({ id, name }),
     toggleDone: () => this.toggleTaskDone({ id })
   });
 

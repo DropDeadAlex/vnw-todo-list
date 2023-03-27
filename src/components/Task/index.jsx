@@ -10,6 +10,7 @@ const Task = ({ task }) => {
       </div>
 
       <div className="container-btn">
+        <DeleteBtn onClick={task.delete}>edit</DeleteBtn>
         <DeleteBtn onClick={task.delete}>delete</DeleteBtn>
       </div>
     </Task_>
