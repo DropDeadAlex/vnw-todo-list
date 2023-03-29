@@ -11,14 +11,14 @@ export const Task_ = styled.li`
   padding: 10px 15px 10px 10px;
   background-color: var(--color-tl-dark3);
 
-  .containner-task {
+  & > .containner-task {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     gap: 10px;
   }
 
-  .container-btn {
+  & > .container-btn {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
