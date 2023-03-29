@@ -61,8 +61,9 @@ class ToDoList extends Component {
     name,
     done: false,
     delete: () => this.deleteTask({ id }),
-    edit: () => this.deleteTask({ id, name }),
-    toggleDone: () => this.toggleTaskDone({ id })
+    edit: (name) => this.editTask({ id, name: name }),
+    toggleDone: () => this.toggleTaskDone({ id }),
+    debuga: () => console.log(this.state.taskList)
   });
 
   genId = () => Math.floor(10000000 * Math.random());

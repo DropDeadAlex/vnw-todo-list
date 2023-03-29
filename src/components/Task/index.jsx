@@ -6,10 +6,7 @@ import { Task_, TaskCheck, TaskName, DeleteBtn } from './styles';
 const Task = ({ task }) => {
   const [editFormOpen, setEditFormOpen] = useState(false)
 
-  task = { ...task, 
-    openEditForm: () => setEditFormOpen(true),
-    closeEditForm: () => setEditFormOpen(false)
-  }
+  const openEditForm = () => setEditFormOpen(true)
   
   return (
     <Task_>
@@ -20,11 +17,11 @@ const Task = ({ task }) => {
       </div>
 
       <div className="container-btn">
-        <DeleteBtn onClick={task.openEditForm}>edit</DeleteBtn>
+        <DeleteBtn onClick={openEditForm}>edit</DeleteBtn>
         <DeleteBtn onClick={task.delete}>delete</DeleteBtn>
       </div>
       
-      <EditTaskForm task={task} isOpen={editFormOpen} />
+      <EditTaskForm task={task} isOpen={editFormOpen} setOpen={setEditFormOpen} />
     </Task_>
   )
 }
