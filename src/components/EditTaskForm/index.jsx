@@ -28,6 +28,7 @@ export const EditTaskForm = ({ task, isOpen, setOpen }) => {
         <TaskName
           placeholder="Editar tarefa..."
           autoFocus
+          onFocus={e => e.target.select()}
           value={$editInput}
           onChange={bindName}
         />
