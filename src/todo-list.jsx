@@ -32,37 +32,11 @@ class ToDoList extends Component {
     })
   };
 
-  editTask = ({ id, name }) => {
-    const { taskList } = this.state
-
-    if (name != ""){
-      const updatedTaskList = taskList.map(task => 
-        task.id === id 
-          ? { ...task, name: name }
-          : task
-      )
-        
-      this.setState({ taskList: updatedTaskList })
-    }
-  };
-
-  toggleTaskDone = ({ id }) => {
-    const { taskList } = this.state
-
-    const updatedTaskList = taskList.map(task =>
-      task.id === id ? { ...task, done: !task.done } : task
-    )
-
-    this.setState({ taskList: updatedTaskList})
-  }
-
   newTask = (id = this.genId(), name = this.state.inputTask) => ({
     id,
     name,
     done: false,
     delete: () => this.deleteTask({ id }),
-    edit: (name) => this.editTask({ id, name: name }),
-    toggleDone: () => this.toggleTaskDone({ id }),
     debuga: () => console.log(this.state.taskList)
   });
 
