@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { NewTaskForm_ } from './styles';
+import { TaskForm_ } from './styles';
 
-export const NewTaskForm = ({ addTask }) => {
+export const TaskForm = ({ addTask }) => {
   const [$inputTask, setInputTask] = useState("")
   
   const bindInputTask = e => setInputTask(e.target.value)
@@ -18,7 +18,7 @@ export const NewTaskForm = ({ addTask }) => {
 
 
   return (
-    <NewTaskForm_ onSubmit={handleSubmit}>
+    <TaskForm_ onSubmit={handleSubmit}>
       <input
         value={$inputTask}
         placeholder="Insira um tarefa..."
@@ -26,6 +26,6 @@ export const NewTaskForm = ({ addTask }) => {
       />
 
       <button>Add</button>
-    </NewTaskForm_>
+    </TaskForm_>
   )
 }

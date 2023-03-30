@@ -1,3 +1,3 @@
 export { Header } from './Header';
-export { NewTaskForm } from './NewTaskForm';
+export { TaskForm } from './TaskForm';
 export { TaskList } from './TaskList';
