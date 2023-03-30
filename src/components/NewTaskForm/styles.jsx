@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const TaskForm_ = styled.form`
+export const NewTaskForm_ = styled.form`
   position: relative;
   top: -20px;
   display: flex;

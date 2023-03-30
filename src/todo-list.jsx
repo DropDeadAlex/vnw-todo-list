@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Header, TaskForm, TaskList } from './components'
+import { Header, NewTaskForm, TaskList } from './components'
 
 class ToDoList extends Component {
   state = {
@@ -41,7 +41,7 @@ class ToDoList extends Component {
         <Header>Lista de Tarefas</Header>
 
         <main>
-          <TaskForm addTask={addTask} />
+          <NewTaskForm addTask={addTask} />
           <TaskList tasks={taskList} />
         </main>
       </>
