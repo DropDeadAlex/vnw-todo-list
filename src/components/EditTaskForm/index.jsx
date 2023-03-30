@@ -7,43 +7,41 @@ export const EditTaskForm = ({ task, isOpen, setOpen }) => {
 
   const [$editInput, setEditInput] = useState(task.name)
 
-  const handle = {
-    saveEdit: () => {
-      task.name = $editInput
-      setOpen(false)
-    },
-
-    cancelEdit: () => {
-      setEditInput(task.name)
-      setOpen(false)
-    },
-
-    submit: e => {
-      $editInput != ""
-        ? handle.saveEdit()
-        : e.preventDefault()
-    },
-
-    autoSelectText: e => e.target.select(),
-
-    bindEditInput: e => setEditInput(e.target.value)
+  const saveEdit = () => {
+    task.name = $editInput
+    setOpen(false)
   }
+
+  const cancelEdit = () => {
+    setEditInput(task.name)
+    setOpen(false)
+  }
+
+  const handleSubmit = e => {
+    $editInput != ""
+      ? saveEdit()
+      : e.preventDefault()
+  }
+
+  const autoSelectText = e => e.target.select()
+
+  const bindEditInput = e => setEditInput(e.target.value)
 
   return (
     <Modal isOpen={isOpen}>
-      <EditForm onSubmit={handle.submit}>
+      <EditForm onSubmit={handleSubmit}>
         <h3>Editar Tarefa</h3>
 
         <EditInput
           placeholder="Editar tarefa..."
           autoFocus
-          onFocus={handle.autoSelectText}
+          onFocus={autoSelectText}
           value={$editInput}
-          onChange={handle.bindEditInput}
+          onChange={bindEditInput}
         />
 
         <ContainerBtn>
-          <button type="button" onClick={handle.cancelEdit}>CANCELAR</button>
+          <button type="button" onClick={cancelEdit}>CANCELAR</button>
           <button>OK</button>
         </ContainerBtn>
       </EditForm>
