@@ -1,18 +1,31 @@
-import { InputTask, AddTask, TaskForm_ } from './styles';
+import { useState } from 'react';
 
-const TaskForm = ({ config: { inputTask, placeholder, bindState, addTask } }) => {
+import { TaskForm_ } from './styles';
 
-  const prevent = e => e.preventDefault()
+const TaskForm = ({ addTask }) => {
+  const [$inputTask, setInputTask] = useState("")
+  
+  const bindInputTask = e => setInputTask(e.target.value)
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    if($inputTask != ""){
+      setInputTask("")
+      addTask($inputTask)
+    }
+  }
+
 
   return (
-    <TaskForm_ onSubmit={prevent}>
-      <InputTask
-        value={inputTask}
-        placeholder={placeholder}
-        onChange={bindState}
+    <TaskForm_ onSubmit={handleSubmit}>
+      <input
+        value={$inputTask}
+        placeholder="Insira um tarefa..."
+        onChange={bindInputTask}
       />
 
-      <AddTask onClick={addTask}>Add</AddTask>
+      <button>Add</button>
     </TaskForm_>
   )
 }

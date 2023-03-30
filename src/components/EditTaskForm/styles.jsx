@@ -21,17 +21,17 @@ export const EditForm = styled.form`
     text-align: start;
     color: rgb(204, 204, 204);
   }
-`
 
-export const EditInput = styled.input`
-  width: 90%;
-  height: 40px;
-  border: 2px solid var(--color-accent-pnk);
-  border-radius: 5px;
-  color: rgb(204, 204, 204);
-  font-size: 18px;
-  padding: 10px;
-  background-color: transparent;
+  input {
+    width: 90%;
+    height: 40px;
+    border: 2px solid var(--color-accent-pnk);
+    border-radius: 5px;
+    color: rgb(204, 204, 204);
+    font-size: 18px;
+    padding: 10px;
+    background-color: transparent;
+  }
 `
 
 export const ContainerBtn = styled.div

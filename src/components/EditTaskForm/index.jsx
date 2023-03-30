@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import { Modal } from "../Modal"
-import { EditForm, EditInput, ContainerBtn } from './styles'
+import { EditForm, ContainerBtn } from './styles'
 
 export const EditTaskForm = ({ task, isOpen, setOpen }) => {
 
@@ -32,7 +32,7 @@ export const EditTaskForm = ({ task, isOpen, setOpen }) => {
       <EditForm onSubmit={handleSubmit}>
         <h3>Editar Tarefa</h3>
 
-        <EditInput
+        <input
           placeholder="Editar tarefa..."
           autoFocus
           onFocus={autoSelectText}
