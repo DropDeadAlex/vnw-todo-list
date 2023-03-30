@@ -49,7 +49,7 @@ class ToDoList extends Component {
 
     return (
       <>
-        <Header></Header>
+        <Header>Lista de Tarefas</Header>
 
         <main>
           <TaskForm config={taskFormConfig} />

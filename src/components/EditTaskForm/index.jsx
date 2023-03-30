@@ -1,40 +1,49 @@
 import { useState } from "react"
 
 import { Modal } from "../Modal"
-import { EditForm, TaskName, ContainerBtn } from './styles'
+import { EditForm, EditInput, ContainerBtn } from './styles'
 
 export const EditTaskForm = ({ task, isOpen, setOpen }) => {
 
   const [$editInput, setEditInput] = useState(task.name)
 
-  const bindName = e => setEditInput(e.target.value)
+  const handle = {
+    saveEdit: () => {
+      task.name = $editInput
+      setOpen(false)
+    },
 
-  const saveEdit = () => {
-    task.name = $editInput
-    setOpen(false)
+    cancelEdit: () => {
+      setEditInput(task.name)
+      setOpen(false)
+    },
+
+    submit: e => {
+      $editInput != ""
+        ? handle.saveEdit()
+        : e.preventDefault()
+    },
+
+    autoSelectText: e => e.target.select(),
+
+    bindEditInput: e => setEditInput(e.target.value)
   }
-
-  const cancelEdit = () => {
-    setEditInput(task.name)
-    setOpen(false)
-  }
-
 
   return (
     <Modal isOpen={isOpen}>
-      <EditForm onSubmit={saveEdit}>
+      <EditForm onSubmit={handle.submit}>
         <h3>Editar Tarefa</h3>
 
-        <TaskName
+        <EditInput
           placeholder="Editar tarefa..."
           autoFocus
-          onFocus={e => e.target.select()}
+          onFocus={handle.autoSelectText}
           value={$editInput}
-          onChange={bindName}
+          onChange={handle.bindEditInput}
         />
 
         <ContainerBtn>
-          <button type="button" onClick={cancelEdit}>CANCELAR</button>
+          <button type="button" onClick={handle.cancelEdit}>CANCELAR</button>
           <button>OK</button>
         </ContainerBtn>
       </EditForm>

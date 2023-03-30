@@ -23,7 +23,7 @@ export const EditForm = styled.form`
   }
 `
 
-export const TaskName = styled.input`
+export const EditInput = styled.input`
   width: 90%;
   height: 40px;
   border: 2px solid var(--color-accent-pnk);
