@@ -3,7 +3,7 @@ import { TaskListContext } from "../../contexts/taskList";
 
 import { EditTaskForm } from '../EditTaskForm';
 
-import { Task_, TaskCheck, TaskName, DeleteBtn } from './styles';
+import { Task_, TaskCheck, TaskName, DeleteBtn, EditBtn } from './styles';
 
 const Task = ({ task }) => {
   const { removeTask } = useContext(TaskListContext)
@@ -22,14 +22,14 @@ const Task = ({ task }) => {
 
   return (
     <Task_>
-      <div className="containner-task">
+      <div className={`containner-task${taskDone ? " checked" : ""}`} >
         <TaskCheck onChange={toggleTaskDone} checked={taskDone} />
 
-        <TaskName>{task.name}</TaskName>
+        <TaskName >{task.name}</TaskName>
       </div>
 
       <div className="container-btn">
-        <DeleteBtn onClick={openEditForm}>edit</DeleteBtn>
+        <EditBtn onClick={openEditForm}>edit</EditBtn>
         <DeleteBtn onClick={deleteTask}>delete</DeleteBtn>
       </div>
 

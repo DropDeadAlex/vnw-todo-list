@@ -135,21 +135,70 @@ export const TaskName = styled.span`
   overflow: hidden;
   cursor: default;
   transition: all 0.3s ease 0s;
+
+  :before, :after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: 50%;
+    margin-top: -0.5px;
+    background: var(--color-white);
+  }
+
+  :before { left: -2.5px }
+
+  :after { 
+    left: 2.5px;
+    background: rgba(204, 204, 204, 0.8);
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0s;
+  }
+
+  .checked & {
+    color: rgba(204, 204, 204, 0.6);
+
+    :before{
+      width: 100%;
+      transition: 
+        width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0s
+      ;
+    }
+
+    :after {
+      background: transparent
+      width: 100%;
+      transition: all 0s ease 0s;
+    }
+  }
+
 `
 
-export const DeleteBtn = styled.span`
+const Btn = styled.span`
   cursor: pointer;
   color: var(--color-tl-gray);
   transition: all 0.3s ease 0s;
-
-
   
   :hover {
-    color: #cb8696;
-    text-shadow: 
-      rgb(240 15 67) 0px 0px 15px,
-      rgb(240 15 67 / 42%) 0px 0px 15px
+    opacity: 0.8;
+  }
+`
+
+export const DeleteBtn = styled(Btn)`
+  :hover {
+    color: hsl(341, 40%, 61%);
+    text-shadow:
+      hsl(346deg 87% 56% / 70%) 0px 0px 18px,
+      hsl(346deg 83% 57% / 90%) 0px 0px 15px
     ;
   }
+`
 
+export const EditBtn = styled(Btn)`
+  :hover {
+    color: hsl(177, 19%, 45%);
+    text-shadow:
+      hsl(184deg 88% 50% / 64%) 0px 0px 13px,
+      hsl(184deg 88% 50% / 18%) 0px 0px 13px
+    ;
+  }
 `
