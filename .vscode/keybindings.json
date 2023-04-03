@@ -1,0 +1,306 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  // editor   ---------------------------------------------------->
+  {
+    "key": "ctrl+oem_4",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+oem_2",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+oem_4",
+    "command": "editor.emmet.action.toggleComment" // emmet block comment
+  },
+  {
+    "key": "ctrl+oem_7",
+    "command": "editor.toggleFold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+k ctrl+l",
+    "command": "-editor.toggleFold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "shift+alt+backspace",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+backspace",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+w",
+    "command": "editor.action.toggleWordWrap"
+  },
+  {
+    "key": "alt+z",
+    "command": "-editor.action.toggleWordWrap"
+  },
+  { //format doc
+    "key": "alt+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  { // formatSelection
+    "key": "shift+alt+f",
+    "command": "editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "-editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  { // next FindMatch
+    "key": "ctrl+shift+d",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+d",
+    "command": "-editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+
+  // editor (emmet)    ---------------------------------------------------->
+  {
+    "key": "shift+alt+r",
+    "command": "editor.emmet.action.balanceOut"
+  },
+  {
+    "key": "shift+alt+d",
+    "command": "editor.emmet.action.balanceIn"
+  },
+  {
+    "key": "shift+alt+pagedown",
+    "command": "editor.emmet.action.nextEditPoint"
+  },
+  {
+    "key": "shift+alt+pageup",
+    "command": "editor.emmet.action.prevEditPoint"
+  },
+  {
+    "key": "ctrl+m a",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "ctrl+m t",
+    "command": "editor.emmet.action.updateTag"
+  },
+  {
+    "key": "ctrl+m ctrl+m",
+    "command": "editor.emmet.action.matchTag"
+  },
+  {
+    "key": "ctrl+m backspace",
+    "command": "editor.emmet.action.removeTag"
+  },
+  {
+    "key": "ctrl+m e",
+    "command": "editor.emmet.action.evaluateMathExpression"
+  },
+  {
+    "key": "shift+alt+m shift+alt+l",
+    "command": "editor.emmet.action.mergeLines"
+  },
+  {
+    "key": "shift+alt+l",
+    "command": "editor.action.joinLines"
+  },
+  {
+    "key": "ctrl+m s",
+    "command": "editor.emmet.action.splitJoinTag"
+  },
+  { // increments --------
+    "key": "ctrl+up",
+    "command": "editor.emmet.action.incrementNumberByOne",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "editor.emmet.action.decrementNumberByOne",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "ctrl+alt+up",
+    "command": "editor.emmet.action.incrementNumberByOneTenth",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "ctrl+alt+down",
+    "command": "editor.emmet.action.decrementNumberByOneTenth",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "editor.emmet.action.incrementNumberByTen",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "editor.emmet.action.decrementNumberByTen",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  { // shiftArgument Left
+    "key": "ctrl+alt+left",
+    "command": "shiftArgumentLeft",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "-shiftArgumentLeft",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  { // shiftArgument Right
+    "key": "ctrl+alt+right",
+    "command": "shiftArgumentRight",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "-shiftArgumentRight",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+  // workbench ---------------------------------------------------->
+  { //change lang
+    "key": "ctrl+m l",
+    "command": "workbench.action.editor.changeLanguageMode",
+    "when": "!notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+k m",
+    "command": "-workbench.action.editor.changeLanguageMode",
+    "when": "!notebookEditorFocused"
+  },
+  { //toggle rightSide bar
+    "key": "ctrl+q",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "ctrl+shift+q",
+    "command": "workbench.action.quickOpenView"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenView"
+  },
+  {
+    "key": "ctrl+alt+end",
+    "command": "workbench.action.focusNextPart"
+  },
+  {
+    "key": "f6",
+    "command": "-workbench.action.focusNextPart"
+  },
+  {
+    "key": "ctrl+alt+home",
+    "command": "workbench.action.focusPreviousPart"
+  },
+  {
+    "key": "shift+f6",
+    "command": "-workbench.action.focusPreviousPart"
+  },
+  {
+    "key": "ctrl+alt+pageup",
+    "command": "workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "-workbench.action.moveEditorToPreviousGroup"
+  },
+  {
+    "key": "ctrl+alt+pagedown",
+    "command": "workbench.action.moveEditorToNextGroup"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "-workbench.action.moveEditorToNextGroup"
+  },
+
+  // terminal ---------------------------------------------------->
+  {
+    "key": "ctrl+f4",
+    "command": "workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus  && !terminalEditorFocus"
+  },
+  { // new terminal
+    "key": "ctrl+oem_3",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  { // new editorView terminal
+    "key": "alt+oem_3",
+    "command": "workbench.action.createTerminalEditor"
+  },
+  { // toggleTerminal
+    "key": "ctrl+shift+oem_3",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+shift+oem_3",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+oem_3",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  { // terminal.scrollUp
+    "key": "alt+pageup",
+    "command": "workbench.action.terminal.scrollUp",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+  },
+  {
+    "key": "ctrl+alt+pageup",
+    "command": "-workbench.action.terminal.scrollUp",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+  },
+  { // terminal.scrollDown
+    "key": "alt+pagedown",
+    "command": "workbench.action.terminal.scrollDown",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+  },
+  {
+    "key": "ctrl+alt+pagedown",
+    "command": "-workbench.action.terminal.scrollDown",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+  },
+  
+  // explorer ---------------------------------------------------->
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus"
+    // unClassifed ---------------------------------------------------->
+  },
+]

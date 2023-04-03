@@ -1,0 +1,84 @@
+{
+    // workbench  ---------------------------------------->
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.labelFormat": "short",
+    
+    // editor  ---------------------------------------->
+    "editor.tabSize": 2,
+    // "editor.insertSpaces": true,
+    
+    "editor.fontFamily": "Fira Code Retina",
+    "editor.fontWeight": "450",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": "'calt','ss01','ss03','ss04','ss06','ss08','ss10','zero','onum','cv01','cv02','cv06'",
+    "editor.lineHeight": 1.55,
+    
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.mouseWheelZoom": true,
+    
+    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticTokenColorCustomizations": {},
+    
+    "editor.find.autoFindInSelection": "multiline",
+    // "window.zoomLevel": -0.3,
+    "window.zoomLevel": -0.3,
+    "window.newWindowDimensions": "offset",
+  
+    // termninal  ---------------------------------------->
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 15,
+    
+    "terminal.integrated.cursorWidth": 3,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    
+    "terminal.integrated.profiles.windows": {
+      "Git Bash": {
+        "source": "Git Bash",
+        "icon": "terminal-bash"
+      }    
+    },    
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    
+    // power mode ---------------------------------------->
+    "powermode.enabled": true,
+    "powermode.shake.enabled": false,
+    "powermode.combo.counterSize": 2.5,
+    "powermode.combo.timeout": 14,
+    
+    // diff editor ---------------------------------------->
+    "diffEditor.ignoreTrimWhitespace": false,
+  
+    // css  ---------------------------------------->
+    "[css]": {
+      "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+    },
+  
+    // js
+    "javascript.updateImportsOnFileMove.enabled": "always",
+  
+    // emmet  ---------------------------------------->
+    "emmet.preferences": {
+      "output.inlineBreak": 5
+    },
+  
+    // markdown ---------------------------------------->
+    "markdown-preview-enhanced.previewTheme": "monokai.css",
+  
+    // undefine section ------
+    "security.workspace.trust.untrustedFiles": "open",
+    
+    "liveServer.settings.donotShowInfoMsg": true,
+    "quokka.colors": {
+      "covered": "#62b455",
+      "errorPath": "#ffa0a0",
+      "errorSource": "#fe536a",
+      "notCovered": "#cccccc",
+      "partiallyCovered": "#d2a032"
+    },
+    "[python]": {
+      "editor.formatOnType": true
+    },
+  }
