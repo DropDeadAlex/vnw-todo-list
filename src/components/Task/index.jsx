@@ -1,9 +1,13 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { TaskListContext } from "../../contexts/taskList";
 
 import { EditTaskForm } from '../EditTaskForm';
+
 import { Task_, TaskCheck, TaskName, DeleteBtn } from './styles';
 
 const Task = ({ task }) => {
+  const { removeTask } = useContext(TaskListContext)
+  
   const [editFormOpen, setEditFormOpen] = useState(false)
   const [taskDone, setTaskDone] = useState(task.done)
 
@@ -19,7 +23,7 @@ const Task = ({ task }) => {
       <div className="containner-task">
         <TaskCheck onChange={toggleTaskDone} checked={taskDone} />
 
-        <TaskName>{task.name}</TaskName>
+        <TaskName>{`${task.name} - ${task.id}`}</TaskName>
       </div>
 
       <div className="container-btn">

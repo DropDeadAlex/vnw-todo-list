@@ -1,10 +1,16 @@
-import { List } from './styles';
+import { useContext } from 'react';
+import { TaskListContext } from '../../contexts/taskList';
+
 import { Task } from '../Task';
 
-const TaskList = ({ tasks }) => {
+import { List } from './styles';
+
+const TaskList = () => {
+  const { taskList } = useContext(TaskListContext)
+
   return (
     <List>
-      {tasks.map(task =>
+      {taskList.map(task =>
         <Task key={task.id} task={task} />
       )}
     </List>

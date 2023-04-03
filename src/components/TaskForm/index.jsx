@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { TaskListContext } from '../../contexts/taskList';
 
 import { TaskForm_ } from './styles';
 
-export const TaskForm = ({ addTask }) => {
+export const TaskForm = () => {
+  const { addTask } = useContext(TaskListContext)
   const [$inputTask, setInputTask] = useState("")
   
   const bindInputTask = e => setInputTask(e.target.value)
