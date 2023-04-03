@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 import { Modal } from "../Modal"
+
 import { EditForm, ContainerBtn } from './styles'
 
 export const EditTaskForm = ({ task, isOpen, setOpen }) => {
@@ -10,11 +11,13 @@ export const EditTaskForm = ({ task, isOpen, setOpen }) => {
   const saveEdit = () => {
     task.name = $editInput
     setOpen(false)
+    console.log(task);
   }
 
   const cancelEdit = () => {
     setEditInput(task.name)
     setOpen(false)
+    task.debug()
   }
 
   const handleSubmit = e => {

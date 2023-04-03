@@ -13,6 +13,8 @@ const Task = ({ task }) => {
 
   const openEditForm = () => setEditFormOpen(true)
 
+  const deleteTask = () => removeTask(task)
+
   const toggleTaskDone = () => {
     task.done = !task.done
     setTaskDone(task.done)
@@ -23,12 +25,12 @@ const Task = ({ task }) => {
       <div className="containner-task">
         <TaskCheck onChange={toggleTaskDone} checked={taskDone} />
 
-        <TaskName>{`${task.name} - ${task.id}`}</TaskName>
+        <TaskName>{task.name}</TaskName>
       </div>
 
       <div className="container-btn">
         <DeleteBtn onClick={openEditForm}>edit</DeleteBtn>
-        <DeleteBtn onClick={task.delete}>delete</DeleteBtn>
+        <DeleteBtn onClick={deleteTask}>delete</DeleteBtn>
       </div>
 
       <EditTaskForm task={task} isOpen={editFormOpen} setOpen={setEditFormOpen} />

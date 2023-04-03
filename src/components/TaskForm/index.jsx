@@ -4,19 +4,22 @@ import { TaskListContext } from '../../contexts/taskList';
 import { TaskForm_ } from './styles';
 
 export const TaskForm = () => {
-  const { addTask } = useContext(TaskListContext)
+  const { addTask, newTask } = useContext(TaskListContext)
+
   const [$inputTask, setInputTask] = useState("")
-  
-  const bindInputTask = e => setInputTask(e.target.value)
 
   const handleSubmit = e => {
     e.preventDefault()
 
-    if($inputTask != ""){
+    if ($inputTask != "") {
+      const task = newTask($inputTask);
+
+      addTask(task)
       setInputTask("")
-      addTask($inputTask)
     }
   }
+
+  const bindInputTask = e => setInputTask(e.target.value)
 
 
   return (
