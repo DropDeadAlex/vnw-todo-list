@@ -10,6 +10,7 @@ const Task = ({ task }) => {
   
   const [editFormOpen, setEditFormOpen] = useState(false)
   const [taskDone, setTaskDone] = useState(task.done)
+  const [taskHover, setTaskHover] = useState(false)
 
   const openEditForm = () => setEditFormOpen(true)
 
@@ -20,12 +21,25 @@ const Task = ({ task }) => {
     setTaskDone(task.done)
   }
 
+  const containnerTask = (s, checked) => (
+    `containner-task${checked ? " checked" : ""}`
+  )
+
+  const toggleHover = () => setTaskHover(!taskHover)
+
+
   return (
     <Task_>
-      <div className={`containner-task${taskDone ? " checked" : ""}`} >
-        <TaskCheck onChange={toggleTaskDone} checked={taskDone} />
+      <div className={containnerTask`${taskDone}`} >
+        <TaskCheck 
+          onChange={toggleTaskDone} 
+          checked={taskDone}  
+          onMouseEnter={toggleHover} 
+          onMouseLeave={toggleHover} 
+          hover={taskHover}
+        />
 
-        <TaskName >{task.name}</TaskName>
+        <TaskName>{task.name}</TaskName>
       </div>
 
       <div className="container-btn">

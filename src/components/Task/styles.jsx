@@ -63,7 +63,7 @@ export const Task_ = styled.li`
 `
 
 export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
-  (({ checked }) => css`
+  (({ checked, hover}) => css`
     appearance: none;
     cursor: pointer;
     display: inline-block;
@@ -78,17 +78,18 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
     background-color: ${!checked ? "transparent" : "var(--color-accent-pnk)"};
     transition: 
       background-color 150ms ease 200ms, 
-      transform 350ms cubic-bezier(0.78, -1.22, 0.25, 7.75) 0s;
+      transform 350ms cubic-bezier(0.78, -1.22, 0.25, 7.75) 0s
+    ;
     
       
     :checked { transform: scale(1.1) }
     
     :before {
       content: "";
-      width: ${!checked ? "0px" : "5px"};
+      width: ${(checked || hover) ? "5px" : "0px"};
       height: 2px;
       border-radius: 2px;
-      background: ${!checked ? "var(--color-accent-pnk)" : "#fff"};
+      background: ${checked ? "#fff" : "var(--color-accent-pnk)"};
       position: absolute;
       transform: rotate(45deg);
       top: 11px;
@@ -101,10 +102,10 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
 
     :after {
       content: "";
-      width: ${!checked ? "0px" : "10px"};
+      width: ${(checked || hover) ? "10px" : "0px"};
       height: 2px;
       border-radius: 2px;
-      background: ${!checked ? "var(--color-accent-pnk)" : "#fff"};
+      background: ${checked ? "#fff" : "var(--color-accent-pnk)"};
       position: absolute;
       transform: rotate(305deg);
       top: 15px;
@@ -116,15 +117,9 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
     }
  
     :hover {
-      :before {
-        width: 5px;
-        transition: width 150ms ease 0s;
-      }
+      :before { transition: width 150ms ease 0s; }
 
-      :after {
-        width: 10px;
-        transition: width 150ms ease 100ms;
-      }
+      :after { transition: width 150ms ease 100ms; }
     }
 `)
   
@@ -165,7 +160,7 @@ export const TaskName = styled.span`
     }
 
     :after {
-      background: transparent
+      background: transparent;
       width: 100%;
       transition: all 0s ease 0s;
     }
