@@ -63,7 +63,7 @@ export const Task_ = styled.li`
 `
 
 export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
-  (({ checked, hover}) => css`
+  (({ checked, hover }) => css`
     appearance: none;
     cursor: pointer;
     display: inline-block;
@@ -94,9 +94,9 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       transform: rotate(45deg);
       top: 11px;
       left: 7px;
-      transition: ${!checked 
-        ? "width 50ms ease 50ms"
-        : "width 150ms ease 100ms"};
+      transition: ${hover 
+        ? "width 100ms ease 50ms"
+        : "width 150ms ease 300ms"};
       transform-origin: 0% 0%;
     }
 
@@ -110,16 +110,16 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       transform: rotate(305deg);
       top: 15px;
       left: 8px;
-      transition: ${!checked 
-        ? "width 50ms ease 0ms"
-        : "width 150ms ease 100ms"};
+      transition: ${hover 
+        ? "width 200ms cubic-bezier(.84,.37,.18,1.87) 150ms"
+        : "width 250ms ease 50ms"};
       transform-origin: 0% 0%;
     }
  
     :hover {
-      :before { transition: width 150ms ease 0s; }
+      /* :before { transition: width 150ms ease 0s; } */
 
-      :after { transition: width 150ms ease 100ms; }
+      /* :after { transition: width 150ms ease 100ms; } */
     }
 `)
   

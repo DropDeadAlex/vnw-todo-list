@@ -39,7 +39,13 @@ const Task = ({ task }) => {
           hover={taskHover}
         />
 
-        <TaskName>{task.name}</TaskName>
+        <TaskName
+          onMouseEnter={toggleHover} 
+          onMouseLeave={toggleHover} 
+          hover={taskHover}
+        >
+          {task.name}
+        </TaskName>
       </div>
 
       <div className="container-btn">
