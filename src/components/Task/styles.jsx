@@ -95,7 +95,7 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       top: 11px;
       left: 7px;
       transition: ${hover 
-        ? "width 100ms ease 50ms"
+        ? "width 300ms ease 150ms"
         : "width 150ms ease 300ms"};
       transform-origin: 0% 0%;
     }
@@ -111,7 +111,7 @@ export const TaskCheck = styled.input.attrs({ type: 'checkbox' })
       top: 15px;
       left: 8px;
       transition: ${hover 
-        ? "width 200ms cubic-bezier(.84,.37,.18,1.87) 150ms"
+        ? "width 400ms cubic-bezier(0.75, 0.26, 0.65, 1.50) 300ms"
         : "width 250ms ease 50ms"};
       transform-origin: 0% 0%;
     }
